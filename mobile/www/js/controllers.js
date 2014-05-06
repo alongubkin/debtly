@@ -1,5 +1,5 @@
 angular.module('starter.controllers', [])
-	.controller('MyDebtsCtrl', function ($scope, Currencies) {
+	.controller('MyDebtsCtrl', function ($scope) {
 		$scope.debts = [
 			{
 				from: 'Deann Holt',
@@ -27,7 +27,7 @@ angular.module('starter.controllers', [])
 			}			
 		];
 	})
-	.controller('OwesMeCtrl', function($scope) {
+	.controller('OwesMeCtrl', function ($scope) {
 		$scope.debts = [
 			{
 				from: 'Deann Holt',
@@ -54,4 +54,7 @@ angular.module('starter.controllers', [])
 				description: 'meat'
 			}			
 		];
+	})
+	.controller('SettingsCtrl', function ($scope) {
+	
 	});
