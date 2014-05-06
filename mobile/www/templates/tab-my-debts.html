@@ -4,6 +4,10 @@
 			<button class="button button-icon icon ion-ios7-minus-outline" 
 					ng-click="showDelete = !showDelete;">
 			</button>
+		</ion-nav-buttons>
+		<ion-nav-buttons side="right">
+			<button class="button button-icon icon ion-plus-round">
+			</button>
 		</ion-nav-buttons>	
 		<ion-list ng-hide="debts.length == 0" show-delete="showDelete">
 			<ion-item ng-repeat="debt in debts" class="item-avatar">
