@@ -1,4 +1,26 @@
 <ion-view title="Owes Me">
-  <ion-content class="has-header">
-  </ion-content>
+	<ion-content class="has-header">
+		<ion-nav-buttons side="left">
+			<button class="button button-icon icon ion-ios7-minus-outline" 
+					ng-click="showDelete = !showDelete;">
+			</button>
+		</ion-nav-buttons>
+		<ion-nav-buttons side="right">
+			<button class="button button-icon icon ion-plus-round">
+			</button>
+		</ion-nav-buttons>	
+		<ion-list ng-hide="debts.length == 0" show-delete="showDelete">
+			<ion-item ng-repeat="debt in debts" class="item-avatar" item="debt">
+				<img src="{{ debt.profile_picture_url }}">
+				<h2>{{ debt.amount | currency : '' }}{{ debt.currency | currencySymbol }} from <strong>{{ debt.from }}</strong></h2>
+				<p>{{ debt.description }}, <span am-time-ago="debt.create_date"></span></p>
+				<ion-delete-button class="ion-minus-circled"
+					ng-click="debts.splice($index, 1)">
+				</ion-delete-button>				
+			</ion-item>
+		</ion-list>
+		<p ng-hide="debts.length > 0" class="centerized-text">
+			No one owes you yet :(
+		</p>
+	</ion-content>
 </ion-view>
