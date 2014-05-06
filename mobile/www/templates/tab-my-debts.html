@@ -12,8 +12,9 @@
 		<ion-list ng-hide="debts.length == 0" show-delete="showDelete">
 			<ion-item ng-repeat="debt in debts" class="item-avatar">
 				<img src="{{ debt.profile_picture_url }}">
-				<h2>{{ debt.amount }} {{ debt.currency }} to <strong>{{ debt.from }}</strong></h2>
-				<p>created <span am-time-ago="debt.create_date"></span></p>
+				<h2>{{ debt.amount | currency : '' }}{{ getCurrencySymbol(debt.currency) }} to <strong>{{ debt.from }}</strong></h2>
+				<!--<p>created <span am-time-ago="debt.create_date"></span></p>-->
+				<p>{{ debt.description }}, <span am-time-ago="debt.create_date"></span></p>
 				<ion-delete-button class="ion-minus-circled"
 					ng-click="debts.splice($index, 1)">
 				</ion-delete-button>				
