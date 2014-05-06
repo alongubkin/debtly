@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('debtly.controllers', [])
 	.controller('MyDebtsCtrl', function ($scope) {
 		$scope.debts = [
 			{

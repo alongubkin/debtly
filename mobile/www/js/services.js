@@ -1,4 +1,4 @@
-angular.module('starter.services', [])
+angular.module('debtly.services', [])
 	.constant('Currencies', 
 		{
 			"USD": {
